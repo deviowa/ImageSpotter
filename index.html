@@ -3,31 +3,31 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Document</title>
-<!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
 
-<!-- Optional theme -->
-<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
 
-<!-- Latest compiled and minified JavaScript -->
+	<!-- Latest compiled and minified JavaScript -->
 
 
 </head>
 <body>
 
-<div>Header</div>
-<div class="row">
-  <div class="col-lg-6">
-    <div class="input-group">
-      <span class="input-group-btn">
-        <button class="btn btn-default" type="button" id="search">Search</button>
-      </span>
-      <input type="text" class="form-control" id="input">
-    </div><!-- /input-group -->
-  </div><!-- /.col-lg-6 -->
+	<div>Header</div>
+	<div class="row">
+		<div class="col-lg-6">
+			<div class="input-group">
+				<span class="input-group-btn">
+					<button class="btn btn-default" type="button" id="search">Search</button>
+				</span>
+				<input type="text" class="form-control" id="input">
+			</div><!-- /input-group -->
+		</div><!-- /.col-lg-6 -->
 
-</div><!-- /.row -->
-<div>Gallary</div>
+	</div><!-- /.row -->
+	<div id="gallary"></div>
 
 
 
@@ -39,11 +39,22 @@
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 
     <script>
-	$('#search').click(function(){
-    console.log("Hello")
-    var text = $("#input").val()
-    $.post( "test.php", { image: ""  } );
-});
-</script> 
+    	$('#search').click(function(){
+    		//console.log("Hello")
+    		var text = $("#input").val()
+    		console.log(text)
+
+    		$.get("/search" + "?q=" + text, function (data){
+//console.log(data)
+for(var i=0; i<data.length; i++){
+	var img = $("<img>");
+	img.attr("src", data[i].image);
+	$("#gallary").append(img);
+}
+})
+    	});
+
+
+    </script> 
 </body>
 </html>
