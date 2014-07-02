@@ -25,7 +25,7 @@ s.get('/', function(req, res) {
 	res.sendfile('index.html')
 })
 
-s.get('/style', function(req, res) {
+s.get('/style.css', function(req, res) {
 	res.sendfile('style.css')
 })
 
