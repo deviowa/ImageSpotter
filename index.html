@@ -14,23 +14,30 @@
 
 </head>
 <body>
+<div class="container">
 
-	<div>Header</div>
 	<div class="row">
-		<div class="col-lg-6">
+        <div class='col-md-12' id='header'>Image Spotter</div>
+    </div>
+
+    <div class="row">
+		<div class="col-md-6 col-md-offset-3">
 			<div class="input-group">
-				<span class="input-group-btn">
-					<button class="btn btn-default" type="button" id="search">Search</button>
-				</span>
 				<input type="text" class="form-control" id="input">
+                <span class="input-group-btn">
+                    <button class="btn btn-default" type="button" id="search">Search</button>
+                </span>
 			</div><!-- /input-group -->
-		</div><!-- /.col-lg-6 -->
+		</div><!-- /.col-md-6 -->
+    </div>
+	
+    <div class="row"> 
+        <div class="col-md-8 col-md-offset-2">
+	       <div id="gallary"></div>
+        </div>
+    </div><!-- /.row -->
 
-	</div><!-- /.row -->
-	<div id="gallary"></div>
-
-
-
+</div>
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
