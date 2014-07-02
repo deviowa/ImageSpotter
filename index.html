@@ -45,13 +45,13 @@
     		console.log(text)
 
     		$.get("/search" + "?q=" + text, function (data){
-//console.log(data)
-for(var i=0; i<data.length; i++){
-	var img = $("<img>");
-	img.attr("src", data[i].image);
-	$("#gallary").append(img);
-}
-})
+    			console.log(data)
+    			for(var i=0; i<data.length; i++){
+    				var img = $("<img>");
+    				img.attr("src", data[i]);
+    				$("#gallary").append(img);
+    			}
+    		})
     	});
 
 
