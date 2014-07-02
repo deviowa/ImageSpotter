@@ -3,10 +3,48 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Document</title>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+
+<!-- Latest compiled and minified JavaScript -->
+
+
 </head>
 <body>
-<div> </div>
 
-	
+<div>Header</div>
+<div class="row">
+  <div class="col-lg-6">
+    <div class="input-group">
+      <span class="input-group-btn">
+        <button class="btn btn-default" type="button" id="search">Search</button>
+      </span>
+      <input type="text" class="form-control" id="input">
+    </div><!-- /input-group -->
+  </div><!-- /.col-lg-6 -->
+
+</div><!-- /.row -->
+<div>Gallary</div>
+
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+    <script>
+	$('#search').click(function(){
+    console.log("Hello")
+    var text = $("#input").val()
+    console.log(text)
+    //$.post( "test.php", { image: ""  } );
+});
+</script> 
 </body>
 </html>
