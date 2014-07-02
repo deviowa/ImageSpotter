@@ -22,8 +22,8 @@ s.get('/search', function(req, res) {
 });
 
 s.get('/', function(req, res) {
-	
-}
+	res.sendfile('index.html')
+})
 
 s.listen(3000);
 
