@@ -24,13 +24,17 @@
     <div class="row searchbar">
 		<div class="col-md-6 col-md-offset-3">
 			<div class="input-group">
-				<input type="text" class="form-control" id="input">
+				<input type="text" class="form-control" id="input" placeholder="Enter Keyword">
                 <span class="input-group-btn">
                     <button class="btn btn-default" type="button" id="search">Search</button>
                 </span>
 			</div><!-- /input-group -->
 		</div><!-- /.col-md-6 -->
     </div>
+
+    <div id= 'message' class="waitMessage"><p>Jonathan: Come on Evey faster!
+                                Evey: Patience is a virtue!
+                                Rick O'Connell: Not right now it isn't!</p></div>
 	
     <div class="row"> 
         <div class="col-md-10 col-md-offset-1 row text-center">
@@ -48,14 +52,18 @@
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 
     <script>
-
+    $('#message').hide()
      $(document).keyup(function(event) {
         if (event.keyCode == 13) {    
             // console.log("Return key pressed");
             var text = $("#input").val()
+            $("#gallary").empty()
+            $("#feets").addClass("footer-absolute");
+            $('#message').show()
             $.get("/search" + "?q=" + text, function (data){
                 // console.log(data)
                 $("#feets").removeClass("footer-absolute");
+                $("#message").hide()
                 for(var i=0; i<data.length; i++){
                     var img = $("<img>");
                     img.attr("src", data[i]);
@@ -69,7 +77,8 @@
 		//console.log("Hello")
 		var text = $("#input").val()
 		// console.log(text)
-
+        $("#gallary").empty()
+        $("#feets").addClass("footer-absolute");
 		$.get("/search" + "?q=" + text, function (data){
 			// console.log(data)
 			for(var i=0; i<data.length; i++){
