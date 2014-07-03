@@ -1,5 +1,5 @@
 body{
-	background-color: #FFF;
+	background-color: #8B1D00;
 }
 
 
@@ -9,6 +9,7 @@ img {
 
 #header {
 	font-size: 72px;
+	text-shadow: 2px 2px #FFF;
 	font-family: sans-serif;
 	font-style: italic;
 	padding-top: 30px;
@@ -19,7 +20,6 @@ img {
 	margin-right: 0px;
 	margin-left: 0px;
 	font-weight: bold;
-	font-size: 2.5em;
 }
 
 .searchbar {
