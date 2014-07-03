@@ -37,6 +37,7 @@
     <div class="row"> 
         <div class="col-md-10 col-md-offset-1 row text-center">
 	       <div id="gallary"></div>
+           <button class="btn" id="more">More</button>
         </div>
     </div><!-- /.row -->
 </div>
@@ -51,44 +52,46 @@
 
     <script>
     $('#message').hide()
+
      $(document).keyup(function(event) {
         if (event.keyCode == 13) {    
             // console.log("Return key pressed");
-            var text = $("#input").val()
-            $("#gallary").empty()
-            $("#feets").addClass("footer-absolute");
-            $('#message').show()
-            $.get("/search" + "?q=" + text, function (data){
-                // console.log(data)
-                $("#feets").removeClass("footer-absolute");
-                $("#message").hide()
-                for(var i=0; i<data.length; i++){
-                    var img = $("<img>");
-                    img.attr("src", data[i]);
-                    $("#gallary").append(img);
-                }
-            })
+            $("#search").click();
         }
      });
      
+     var page = 0;
+     var text = "";
+
+     var reloadImages = function() {
+        $.get("/search" + "?q=" + text + "&page=" + page, function (data){
+            // console.log(data)
+            $("#feets").removeClass("footer-absolute");
+            $("#message").hide()
+            for(var i=0; i<data.length; i++){
+                var img = $("<img>");
+                img.attr("src", data[i]);
+                $("#gallary").append(img);
+            }
+        })
+     }
+
     $('#search').click(function(){
 		//console.log("Hello")
-		var text = $("#input").val()
-		// console.log(text)
+    	text = $("#input").val()
+        page = 1;
+    	// console.log(text)
         $("#gallary").empty()
         $("#feets").addClass("footer-absolute");
         $('#message').show()
-		$.get("/search" + "?q=" + text, function (data){
-			// console.log(data)
-            $("#feets").removeClass("footer-absolute");
-            $("#message").hide()
-			for(var i=0; i<data.length; i++){
-				var img = $("<img>");
-				img.attr("src", data[i]);
-				$("#gallary").append(img);
-			}
-		})
+        reloadImages();
+	
 	});
+
+    $('#more').click(function(){
+        page = page + 1;
+        reloadImages();
+    });
     
     </script> 
 </body>
