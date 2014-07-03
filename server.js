@@ -3,13 +3,13 @@ var s = server();
 var request = require("request");
 var url = require('url');
 
-s.get('/search', function(req, res) {
-    //console.log('It works')
+s.get('/more', function(req, res) {
+    console.log('It works')
     var queryObject = url.parse(req.url, true).query;
-    //console.log(queryObject);
+    console.log(queryObject);
 
     request('https://api.500px.com/v1/photos/search?consumer_key=0hOeFTYiG7RifmC07gLhd8iaSbXHjEBC9vDftgX4' + '&tag=' +
-        queryObject.q, function(error, response, body) {
+        queryObject.q + '&page=' + queryObject.page, function(error, response, body) {
             var images = JSON.parse(body);
             var imageArray = []
             for (i = 0; i < images.photos.length; i++) {
@@ -19,7 +19,6 @@ s.get('/search', function(req, res) {
             res.send(imageArray);
         });
 });
-
 s.get('/', function(req, res) {
     res.sendfile('index.html')
 })
