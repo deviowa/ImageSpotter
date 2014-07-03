@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 body{
 	background-color: #000;
 }
@@ -13,4 +14,38 @@ body{
 
 #gallary{
 	padding: 20px;
+=======
+img {
+	margin: 10px;
+}
+
+#header {
+	font-size: 72px;
+	font-family: sans-serif;
+	font-style: italic;
+	padding-top: 30px;
+	padding-bottom: 30px;
+	color: black;
+	padding-left: 0px;
+	padding-right: 0px;
+	margin-right: 0px;
+	margin-left: 0px
+}
+
+.searchbar {
+	margin-top:15px;
+	margin-bottom: 40px;
+}
+
+.footer {
+	background-color: black;
+	height: 140px;
+	width:100%;
+	position: relative;
+}
+
+#gallary {
+	margin-bottom: 55px;
+	
+>>>>>>> fd9dce8683f4186524775413af41dc9127379a78
 }
