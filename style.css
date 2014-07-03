@@ -36,8 +36,12 @@ img {
 }
 
 .footer {
+	color: #FFF;
+	font-size: 32px;
+	padding-top: 40px;
+	text-align: center;
 	background-color: black;
-	height: 140px;
+	height: 100px;
 	width:100%;
 }
 
