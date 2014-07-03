@@ -32,9 +32,7 @@
 		</div><!-- /.col-md-6 -->
     </div>
 
-    <div id= 'message' class="waitMessage"><p>Jonathan: Come on Evey faster!
-                                Evey: Patience is a virtue!
-                                Rick O'Connell: Not right now it isn't!</p></div>
+    <div id= 'message' class="waitMessage"></div>
 	
     <div class="row"> 
         <div class="col-md-10 col-md-offset-1 row text-center">
@@ -79,8 +77,11 @@
 		// console.log(text)
         $("#gallary").empty()
         $("#feets").addClass("footer-absolute");
+        $('#message').show()
 		$.get("/search" + "?q=" + text, function (data){
 			// console.log(data)
+            $("#feets").removeClass("footer-absolute");
+            $("#message").hide()
 			for(var i=0; i<data.length; i++){
 				var img = $("<img>");
 				img.attr("src", data[i]);
