@@ -1,20 +1,8 @@
-<<<<<<< HEAD
 body{
 	background-color: #000;
 }
 
 
-#header{
-	color: #FFF;
-	font-size: 2.5em;
-	font-weight: bold;
-	border-top: 1.5em;
-	text-align: center;
-}
-
-#gallary{
-	padding: 20px;
-=======
 img {
 	margin: 10px;
 }
@@ -29,7 +17,9 @@ img {
 	padding-left: 0px;
 	padding-right: 0px;
 	margin-right: 0px;
-	margin-left: 0px
+	margin-left: 0px;
+	font-weight: bold;
+	font-size: 2.5em;
 }
 
 .searchbar {
@@ -46,6 +36,4 @@ img {
 
 #gallary {
 	margin-bottom: 55px;
-	
->>>>>>> fd9dce8683f4186524775413af41dc9127379a78
 }
