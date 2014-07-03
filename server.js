@@ -17,7 +17,7 @@ s.get('/search', function(req, res) {
                 imageArray.push(images.photos[i].image_url);
             }
             res.send(imageArray);
-        });
+    });
 });
 s.get('/', function(req, res) {
     res.sendfile('index.html')
