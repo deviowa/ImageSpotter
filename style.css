@@ -1,0 +1,16 @@
+body{
+	background-color: #000;
+}
+
+
+#header{
+	color: #FFF;
+	font-size: 2.5em;
+	font-weight: bold;
+	border-top: 1.5em;
+	text-align: center;
+}
+
+#gallary{
+	padding: 20px;
+}
