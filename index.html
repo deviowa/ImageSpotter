@@ -52,7 +52,7 @@
 
     <script>
     $('#message').hide()
-
+    $('#more').hide()
      $(document).keyup(function(event) {
         if (event.keyCode == 13) {    
             // console.log("Return key pressed");
@@ -67,6 +67,7 @@
         $.get("/search" + "?q=" + text + "&page=" + page, function (data){
             // console.log(data)
             $("#feets").removeClass("footer-absolute");
+            $("#more").show()
             $("#message").hide()
             for(var i=0; i<data.length; i++){
                 var img = $("<img>");
@@ -84,6 +85,7 @@
         $("#gallary").empty()
         $("#feets").addClass("footer-absolute");
         $('#message').show()
+        $('#more').hide()
         reloadImages();
 	
 	});
