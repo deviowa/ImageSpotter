@@ -47,22 +47,37 @@
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 
     <script>
-    	$('#search').click(function(){
-    		//console.log("Hello")
-    		var text = $("#input").val()
-    		console.log(text)
+    
+     $(document).keyup(function(event) {
+        if (event.keyCode == 13) {    
+            // console.log("Return key pressed");
+            var text = $("#input").val()
+            $.get("/search" + "?q=" + text, function (data){
+                // console.log(data)
+                for(var i=0; i<data.length; i++){
+                    var img = $("<img>");
+                    img.attr("src", data[i]);
+                    $("#gallary").append(img);
+                }
+            })
+        }
+     });
+     
+    $('#search').click(function(){
+		//console.log("Hello")
+		var text = $("#input").val()
+		// console.log(text)
 
-    		$.get("/search" + "?q=" + text, function (data){
-    			console.log(data)
-    			for(var i=0; i<data.length; i++){
-    				var img = $("<img>");
-    				img.attr("src", data[i]);
-    				$("#gallary").append(img);
-    			}
-    		})
-    	});
-
-
+		$.get("/search" + "?q=" + text, function (data){
+			// console.log(data)
+			for(var i=0; i<data.length; i++){
+				var img = $("<img>");
+				img.attr("src", data[i]);
+				$("#gallary").append(img);
+			}
+		})
+	});
+    
     </script> 
 </body>
 </html>
