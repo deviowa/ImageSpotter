@@ -1,5 +1,5 @@
 body{
-	background-color: #000;
+	background-color: #FFF;
 }
 
 
@@ -31,7 +31,11 @@ img {
 	background-color: black;
 	height: 140px;
 	width:100%;
-	position: relative;
+}
+
+.footer-absolute{
+	position: absolute;
+	bottom: 0px;
 }
 
 #gallary {
